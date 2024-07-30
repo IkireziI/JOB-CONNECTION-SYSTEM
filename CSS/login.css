@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0052B4;
+  background-color: chocolate;
 }
 
 .login-container {
@@ -39,7 +39,7 @@ input {
 
 input[type="submit"] {
   background-color:#FFDF00;
-  color:  #0052B4;
+  color:  chocolate;
   cursor: pointer;
 }
 
