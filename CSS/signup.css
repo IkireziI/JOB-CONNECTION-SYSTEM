@@ -8,7 +8,7 @@
 body {
   font-family: "DM Sans", sans-serif;
   background-color: #f2f2f2;
-  background-image: url('/images/background.jpg');
+  background-image: url('/images/chocolate\ wallpaper.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -35,8 +35,8 @@ body {
 
 #side-image {
   /* flex: 0 0 35%;  */
-  background-color: #0052B4; 
-  color: #fff;
+  background-color: rgb(244, 221, 204); 
+  color: black;
   padding: 20px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -80,8 +80,8 @@ select {
 
 input[type="submit"] {
   width: 100%;
-  background-color: #007bff;
-  color: #FFDF00;
+  background-color: chocolate;
+  color: black;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -90,8 +90,8 @@ input[type="submit"] {
   font-weight: bold;
 }
 input[type="submit"]:hover{
-  background-color: #FFDF00;
-  color: #007bff;
+  background-color:rgb(218, 191, 172);
+  color: chocolate;
 }
 
 .checkbox-label {
@@ -109,7 +109,7 @@ input[type="checkbox"] {
   margin-top: 2px;
 }
 .log span{
-  color: #0052B4;
+  color:chocolate;
   font-weight: bold;
 }
 #hide{

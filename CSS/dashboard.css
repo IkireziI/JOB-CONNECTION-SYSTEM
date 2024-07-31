@@ -6,8 +6,8 @@ body {
 
 .sidebar {
   width: 200px;
-  background-color: #333;
-  color: #fff;
+  background-color: chocolate;
+  color: black;
   padding: 20px;
   height: 100vh;
   position: fixed;
@@ -39,7 +39,7 @@ body {
 }
 
 header {
-  background-color: #f4f4f4;
+  background-color:rgb(237, 219, 207);
   padding: 10px;
   text-align: center;
   margin-bottom: 20px;
@@ -63,7 +63,7 @@ header {
 }
 
 .content {
-  background-color: #fff;
+  background-color:rgb(237, 219, 207);
   padding: 20px;
 }
 

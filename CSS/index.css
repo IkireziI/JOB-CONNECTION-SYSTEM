@@ -88,14 +88,14 @@ a{
 }
 
 .login:hover{
-    border: 2px solid #F0F41D;
-    color: #F0F41D;
+    border: 2px solid chocolate;
+    color: chocolate;
 }
 
 .signup{
     padding: 5px 20px;
-    background-color: black;
-    color: chocolate;
+    background-color: rgb(232, 208, 191);
+    color: black;
     border-radius: 1rem;
     font-size: 18px;
     transition: 0.3s ease;
@@ -103,8 +103,8 @@ a{
 }
 
 .signup:hover{
-    background-color: #F0F41D;
-    color: chocolate;
+    background-color: white;
+    color: black;
 }
 
 #menu-icon{

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color:rgb(237, 219, 207);
 }
 
 .container {
@@ -11,11 +11,11 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: chocolate;
+    color:black;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #77b5fe 3px solid;
+    /* border-bottom: #77b5fe 3px solid; */
 }
 
 header h1 {
@@ -29,7 +29,7 @@ header h1 {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     margin-top: 20px;
 }
 
