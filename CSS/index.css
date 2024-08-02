@@ -48,7 +48,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
-    padding: 1rem;
+    padding: 3rem;
     /* padding-left: 4rem; */
     /* padding-right: 4rem; */
     display: flex;
@@ -104,7 +104,7 @@ a{
 
 .signup:hover{
     background-color: white;
-    color: black;
+    /* color: ; */
 }
 
 #menu-icon{
@@ -182,19 +182,20 @@ a{
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 5rem;
+    padding: 3rem;
 }
 
 .hero_cont{
     color: black;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 20px;
 }
 
 .hero_cont h2{
     font-size: xx-large;
     letter-spacing: 3%;
+    margin-left: 2rem;
 }
 
 .hero_cont .smart_yl{

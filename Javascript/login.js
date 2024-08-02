@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault();
             const formData = {
-                firstName: document.getElementById('username').value,
-                password: document.getElementById('password').value,
+                email: document.getElementById('email').value,
+                Password: document.getElementById('password').value,
             };
-            fetch('http://localhost:5000/login', {
+            console.log(formData);
+            fetch('http://localhost:8000/api/v1/users/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -19,12 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 document.getElementById('loginMessage').textContent = data.message;
-                if (data.redirect_url) {
-                  window.location.href = data.redirect_url;
-              }
+                
+                if (data.user.role === 'admin') {
+
+                    window.location.href = './dashboard.html'; 
+                  } else if (data.user.role === 'talent') {
+                    window.location.href = './dashboard.html'; 
+                  } else {
+                    window.location.href = './dash.html'
+                  } 
               });
         });
+       
     } else {
         console.log('login Form not found');
     }

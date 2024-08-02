@@ -13,30 +13,36 @@
       <div id="side-image">
         <!-- <img src="/Images/signup.jpg"> -->
         <p class="title">CREATE YOUR ACCOUNT!!</p>
-        <p class="word">Hello! Employee <br> Start your registration <span style="color:chocolate;"> here</span>.</p>
+        <p class="word">Hello! <br> Start your registration <span style="color:chocolate;"> here</span>.</p>
       </div> 
       <div id="form">
         <div id="toast-container" class="toast-container"></div>
         <h1 id="top" style="display: none;">Registration Form</h1>
         <form id="reg-form">
           <label>FirstName</label>
-          <input type="text" name="firstName" id="firstName">
+          <input type="text" name="firstName" id="firstName" required>
           <label>LastName</label>
-          <input type="text" name="lastName" id="lastName">
+          <input type="text" name="lastName" id="lastName" required>
           <label>Email</label>
-          <input type="email" id="email">
+          <input type="email" id="email" required>
           <label>Password</label>
-          <input type="password" id="password">
+          <input type="password" id="password" required>
           <div id="hide" style="display: none;">
             <p class="length">Password should contain 7 characters</p>
             <p class="letter">Password should contain at least one letter</p>
             <p class="number">Password should contain at least one number</p>
             <p class="capital">Password should contain at least one capital letter</p>
           </div>
-          <label>Confirm Password</label>
-          <input type="password" id="cpassword">
+          <label>Role
+            <select name="role" id="role" required>
+              <option value="">Select an option</option>
+              <option value="Job seeker">Job seeker</option>
+              <option value="Employer">Employer</option>
+            </select>
+          </label>
+          
           <label class="checkbox-label">
-            <input type="checkbox" value="terms">I agree to the terms & conditions
+            <input type="checkbox" id="terms" value="terms" required>I agree to the terms & conditions
           </label>
           <input type="submit" value="Register" id="register-btn">
           <p class="log">Already have an account? <a href="./login.html"><span>Login</span></a></p>
@@ -45,7 +51,78 @@
       </div>
     </div>
   </section>
-  <script src="/Javascript/signup.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.1/toastify.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('reg-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const role = document.getElementById('role').value;
+        const terms = document.getElementById('terms').checked;
+        
+        if (!terms) {
+          Toastify({
+            text: "You must agree to the terms and conditions.",
+            style: {
+              background: "red",
+            },
+            className: "error",
+          }).showToast();
+          return;
+        }
+        
+        const data = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+          role: role
+        };
+        
+        try {
+          const response = await fetch('http://localhost:8000/api/v1/users/SignUp', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+          
+          const result = await response.json();
+          
+          if (response.ok) {
+            Toastify({
+              text: "Registration successful!",
+              style: {
+                background: "green",
+              },
+              className: "success",
+            }).showToast();
+            // Optionally redirect or perform further actions
+          } else {
+            Toastify({
+              text: `Error: ${result.message}`,
+              style: {
+                background: "red",
+              },
+              className: "error",
+            }).showToast();
+          }
+        } catch (error) {
+          Toastify({
+            text: `Network error: ${error.message}`,
+            style: {
+              background: "red",
+            },
+            className: "error",
+          }).showToast();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
