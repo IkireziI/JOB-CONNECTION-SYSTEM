@@ -120,6 +120,9 @@
         </div>
     </div>
     <script>
+
+
+
         function checkRegistration(event) {
             // Example check - replace this with your actual registration check
             const isRegistered = localStorage.getItem('isRegistered');
@@ -127,9 +130,11 @@
             if (!isRegistered) {
                 event.preventDefault(); // Prevent the link from being followed
                 alert('Please register before applying for jobs.');
-                window.location.href = 'register.html'; // Redirect to registration page
+                window.location.href = 'register.html'; 
             }
         }
+
     </script>
+    <script src="job.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

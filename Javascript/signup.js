@@ -26,7 +26,7 @@ document.getElementById('reg-form').addEventListener('submit', async function (e
     };
   
     try {
-      const response = await fetch('http://localhost:8000/api/v1/users/signUp', {
+      const response = await fetch('https://jbs-backend.onrender.com/api/v1/users/signUp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
